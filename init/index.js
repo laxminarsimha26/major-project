@@ -7,7 +7,7 @@ const initData = require('./data.js');
 
 const listing = require("../models/listing.js");
 
-const MONGO_URL = "mongodb+srv://P-laxminarsimha:Pln%40102627@cluster0.mwiapbd.mongodb.net/?appName=Cluster0";
+const MONGO_URL = process.env.ATLASDB_URL;
 
 main()
     .then(() => {
