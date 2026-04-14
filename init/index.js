@@ -1,10 +1,13 @@
+const dns = require("dns");
+dns.setServers(["1.1.1.1", "0.0.0.0"]);
+
 const mongoose = require('mongoose');
 
 const initData = require('./data.js');
 
 const listing = require("../models/listing.js");
 
-const MONGO_URL = "mongodb://localhost:27017/wanderlust";
+const MONGO_URL = "mongodb+srv://P-laxminarsimha:Pln%40102627@cluster0.mwiapbd.mongodb.net/?appName=Cluster0";
 
 main()
     .then(() => {

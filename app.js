@@ -1,6 +1,5 @@
 if(process.env.NODE_ENV != "production"){
 require('dotenv').config();
-console.log(process.env.SECRET);
 }
 
 const express = require("express");
@@ -21,8 +20,11 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
+const dns = require("dns");
+dns.setServers(["1.1.1.1", "0.0.0.0"]);
+
 // const MONGO_URL = "mongodb://localhost:27017/wanderlust";
-const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = "mongodb+srv://P-laxminarsimha:Pln%40102627@cluster0.mwiapbd.mongodb.net/?appName=Cluster0";
 
 main()
     .then(() => {
@@ -32,9 +34,15 @@ main()
         console.log(err);
     });
 
+// async function main() {
+//     await mongoose.connect(MONGO_URL);
+// }
+
 async function main() {
-    await mongoose.connect(dbUrl);
+  await mongoose.connect(dbUrl);
+
 }
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
