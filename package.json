@@ -2,7 +2,7 @@
     "engines": {
         "node": "24.14.1"
     },
-    "name": "major-project",
+    "name": "athiyahomes",
     "version": "1.0.0",
     "description": "",
     "main": "app.js",
